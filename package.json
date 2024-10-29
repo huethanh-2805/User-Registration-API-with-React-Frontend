@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@nestjs/config": "^3.3.0",
+    "@nestjs/mongoose": "^10.1.0",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.7.3",
+    "react-router-dom": "^6.27.0"
+  },
+  "name": "source-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^22.8.2",
+    "concurrently": "^9.0.1"
+  }
+}
