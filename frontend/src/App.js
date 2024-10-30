@@ -1,4 +1,3 @@
-//Cấu hình Routing
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
@@ -8,11 +7,11 @@ import Register from './pages/Register';
 function App() {
     return (
         <div>
-            <Router>
+            <Router basename="/User-Registration-API-with-React-Frontend"> {/* Thêm basename */}
                 {/* Bootstrap Navbar */}
                 <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
                     <div className="container">
-                        <Link className="navbar-brand" to="/">Home</Link>
+                        <Link className="navbar-brand" to="/">Home</Link> {/* Chỉnh sửa thành '/' */}
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -26,7 +25,6 @@ function App() {
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                 </nav>
 
