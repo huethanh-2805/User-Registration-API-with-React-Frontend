@@ -19,10 +19,10 @@ function App() {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link btn btn-primary me-2" to="/login">Login</Link>
+                                    <Link className="nav-link btn btn-primary me-2 text-white" to="/login">Login</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link btn btn-outline-primary" to="/register">Register</Link>
+                                    <Link className="nav-link btn btn-primary text-white" to="/register">Register</Link>
                                 </li>
                             </ul>
                         </div>

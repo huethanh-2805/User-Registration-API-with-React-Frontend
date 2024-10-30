@@ -6,6 +6,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -18,9 +19,17 @@ function Login() {
       });
 
       setMessage('Login successful!');
-      navigate('/');
+      setShowModal(true); // Hiện modal khi đăng nhập thành công
+      setTimeout(() => {
+        setShowModal(false); // Ẩn modal sau 1 giây
+        navigate('/');
+      }, 1000);
     } catch (error) {
       setMessage(error.response?.data.message || 'Login failed.');
+      setShowModal(true);
+      setTimeout(() => {
+        setShowModal(false);
+      }, 2000);
     }
   }
 
@@ -51,10 +60,22 @@ function Login() {
               />
             </div>
             <button type="submit" className="btn btn-primary w-100">Login</button>
-            {message && <p className="text-center mt-3">{message}</p>}
           </form>
         </div>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal show" style={{ display: "block" }}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-body">
+                <p>{message}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
