@@ -22,7 +22,7 @@ function Login() {
       setShowModal(true); // Hiện modal khi đăng nhập thành công
       setTimeout(() => {
         setShowModal(false); // Ẩn modal sau 1 giây
-        navigate('/');
+        navigate('/User-Registration-API-with-React-Frontend');
       }, 1000);
     } catch (error) {
       setMessage(error.response?.data.message || 'Login failed.');
