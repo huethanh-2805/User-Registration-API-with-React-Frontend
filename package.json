@@ -11,13 +11,9 @@
   "name": "source-code",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "https://huethanh-2805.github.io/User-Registration-API-with-React-Frontend",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
-    "predeploy": "npm run build",
-  	"deploy": "gh-pages -d build"
+    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\""
   },
   "keywords": [],
   "author": "",
