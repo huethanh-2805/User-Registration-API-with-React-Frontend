@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ onLoginSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -18,13 +18,20 @@ function Login() {
         password,
       });
 
+      const { accessToken, user } = response.data;
+      localStorage.setItem('token', accessToken); // Lưu token vào localStorage
+
+      // Gọi hàm onLoginSuccess để cập nhật trạng thái đăng nhập
+      onLoginSuccess();
+
       setMessage('Login successful!');
       setShowModal(true); // Hiện modal khi đăng nhập thành công
       setTimeout(() => {
         setShowModal(false); // Ẩn modal sau 1 giây
-        navigate('/');
+        navigate('/profile');
       }, 1000);
     } catch (error) {
+      console.error('Error response:', error.response);
       setMessage(error.response?.data.message || 'Login failed.');
       setShowModal(true);
       setTimeout(() => {

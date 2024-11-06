@@ -5,6 +5,7 @@
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
+    "jwt-decode": "^4.0.0",
     "mongoose": "^8.7.3",
     "react-router-dom": "^6.27.0"
   },
